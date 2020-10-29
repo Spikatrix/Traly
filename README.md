@@ -6,4 +6,4 @@ Add translations to LRC files
 
 ## Supported applications
 
- - Huawei's stock Android music player
+ - [Android] Huawei's stock music player

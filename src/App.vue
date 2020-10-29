@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import store from './js/dataStore.js'
+import store from './js/DataStore.js'
 
 import GitHubLink from './components/GitHubLink.vue'
 import StepContainer from './components/StepContainer.vue'

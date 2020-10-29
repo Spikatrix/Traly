@@ -1,4 +1,4 @@
-import langs from './languages.js'
+import langs from './Languages.js'
 
 export default {
   file: undefined,

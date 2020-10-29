@@ -1,0 +1,34 @@
+.traly-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  padding: 20px 10px 20px 10px;
+}
+
+.traly-logo {
+  width: 150px;
+  height: 150px;
+}
+
+.traly-header-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.traly-header-text > div {
+  text-align: left;
+  align-self: flex-start;
+}
+
+.traly-header-title {
+  font-family: 'Langdon';
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.traly-header-tagline {
+  color: #868686;
+}

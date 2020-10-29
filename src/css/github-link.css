@@ -1,0 +1,30 @@
+.github-link-container {
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  border-radius: 0 0 0 10px;
+  transition: background-color .3s;
+}
+
+.github-link-container:hover {
+  background-color: #e4e4e4;
+}
+
+.github-link-container:active {
+  background-color: #cccccc;
+}
+
+.github-link-container * {
+  vertical-align: middle;
+}
+
+.github-title {
+  display: inline-block;
+  padding: 1px 8px 0 6px; /* Yuck */
+  font-size: 12px;
+}
+
+.github-logo {
+  width: 24px;
+  height: 24px;
+}

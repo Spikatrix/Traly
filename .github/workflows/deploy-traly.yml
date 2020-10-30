@@ -1,0 +1,33 @@
+name: Deploy Traly
+
+on:
+  push:
+    branches: master
+
+jobs:
+  deploy_on_github_pages:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout master branch
+      uses: actions/checkout@v2
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+        
+    - name: Install and setup all dependencies
+      run: npm install
+
+    - name: Build the vue app
+      run: npm run build
+      
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@3.6.2
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: master
+        FOLDER: dist
+        CLEAN: false
+        TARGET_FOLDER: docs

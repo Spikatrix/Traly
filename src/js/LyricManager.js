@@ -13,7 +13,6 @@ function extractLyrics(contents) {
       }
 
       lastBracketIndex = line.lastIndexOf('[', lastBracketIndex - 1);
-      console.log(timestampRegex.test(line.substring(lastBracketIndex)));
       if (lastBracketIndex == -1) { // Invalid line in the LRC file
         break;
       } else if (timestampRegex.test(line.substring(lastBracketIndex))) {
@@ -61,7 +60,11 @@ function generateTranslatedContents(contents, translatedLyrics) {
             translatedIndex++;
           }
         } else {
-          lyrics += line + '^' + translatedLines[translatedIndex];
+          if (translatedLines[translatedIndex].trim().length == 0) {
+            lyrics += line;
+          } else {
+            lyrics += line + '^' + translatedLines[translatedIndex];
+          }
           translatedIndex++;
         }
 

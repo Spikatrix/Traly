@@ -26,6 +26,10 @@ jobs:
     - name: Stop jekyll from messing around
       run: touch dist/.nojekyll
 
+    # I have no idea why the path for the font is incorrect in the deployment
+    - name: Fix incorrect path for font
+      run: sed -i -e 's/\/_assets\///' dist/_assets/*.css
+
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.6.2
       with:

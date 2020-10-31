@@ -32,5 +32,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: master
         FOLDER: dist
-        CLEAN: false
+        CLEAN: true
         TARGET_FOLDER: docs

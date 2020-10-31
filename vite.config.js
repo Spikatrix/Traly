@@ -1,3 +1,5 @@
 module.exports = {
-  base: '/'
+  base: process.env.NODE_ENV === 'production'
+    ? '/Traly/'
+    : '/'
 }

@@ -5,8 +5,7 @@ function getFileContents(file) {
       resolve(evt.target.result);
     }
     reader.onerror = function(evt) {
-      console.log(evt.target);
-      reject(undefined);
+      reject(new Error(reader.error));
     }
     reader.readAsText(file);
   });

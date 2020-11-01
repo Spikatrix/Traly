@@ -63,7 +63,7 @@ export default {
   methods: {
     updateLink() {
       this.dataStore.link = 'https://translate.google.com/?sl=auto&tl=' + this.dataStore.selectedLang +
-                            '&text=' + this.lyrics.replace(/\n/g, '%0A') + '&op=translate';
+                            '&text=' + encodeURIComponent(this.lyrics) + '&op=translate';
     },
     translateLyrics() {
       if (this.fileContents == undefined || this.dataStore.translatedLyrics.length == 0) {
@@ -85,7 +85,17 @@ export default {
   },
   watch: {
     'dataStore.file': async function(newFile) {
-      this.fileContents = (await getFileContents(newFile)).replace(/\r\n?/g, '\n'); // Apparently, files with dos line endings (CRLF) causes issues
+      try {
+        this.fileContents = await getFileContents(newFile);
+      } catch (error) {
+        console.error(error);
+        alert('An error occured while reading the selected file: ' + error);
+        this.fileContents = undefined;
+        return;
+      }
+
+      // Apparently, files with DOS line endings (CRLF) causes issues
+      this.fileContents = this.fileContents.replace(/\r\n?/g, '\n'); 
       this.lyrics = LyricManager.extractLyrics(this.fileContents);
       this.updateLink();
     },

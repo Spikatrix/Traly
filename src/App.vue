@@ -84,20 +84,17 @@ export default {
     }
   },
   watch: {
-    'dataStore.file': async function(newFile) {
-      try {
-        this.fileContents = await getFileContents(newFile);
-      } catch (error) {
+    'dataStore.file': function(newFile) {
+      getFileContents(newFile).then(result => {
+        // Apparently, files with DOS line endings (CRLF) causes issues which is why replace is used
+        this.fileContents = result.replace(/\r\n?/g, '\n');
+        this.lyrics = LyricManager.extractLyrics(this.fileContents);
+        this.updateLink();
+      }).catch(error => {
         console.error(error);
         alert('An error occured while reading the selected file: ' + error);
         this.fileContents = undefined;
-        return;
-      }
-
-      // Apparently, files with DOS line endings (CRLF) causes issues
-      this.fileContents = this.fileContents.replace(/\r\n?/g, '\n'); 
-      this.lyrics = LyricManager.extractLyrics(this.fileContents);
-      this.updateLink();
+      });
     },
     'dataStore.selectedLang': function(newLang) {
       if (this.lyrics != undefined) {

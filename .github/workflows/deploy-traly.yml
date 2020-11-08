@@ -18,10 +18,10 @@ jobs:
         node-version: '10.x'
 
     - name: Install and setup all dependencies
-      run: npm install
+      run: yarn install
 
     - name: Build the vue app
-      run: npm run build
+      run: yarn run build
       env:
         NODE_ENV: production
 

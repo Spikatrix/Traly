@@ -7,6 +7,7 @@
      :step="step"
      v-bind:dataStore="dataStore"
      v-on:translateLyrics="translateLyrics" />
+  <LRCEditorLink />
   <TralyFooter />
 </template>
 
@@ -17,6 +18,7 @@ import GitHubLink from './components/GitHubLink.vue'
 import StepContainer from './components/StepContainer.vue'
 import TralyHeader from './components/TralyHeader.vue'
 import NoteComponent from './components/NoteComponent.vue'
+import LRCEditorLink from './components/LRCEditorLink.vue'
 import TralyFooter from './components/TralyFooter.vue'
 
 import getFileContents from './js/FileReader.js'
@@ -29,6 +31,7 @@ export default {
     TralyHeader,
     StepContainer,
     NoteComponent,
+    LRCEditorLink,
     TralyFooter
   },
   data() {

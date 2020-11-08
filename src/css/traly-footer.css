@@ -2,8 +2,12 @@
   background-color: black;
   text-align: center;
   font-size: 12px;
-  margin-top: 40px;
   background-color: #fafafa;
   border-top: 1px solid #c5c5c5;
   padding: 10px;
+}
+
+.first-footer {
+  background-color: #fcfcfc;
+  margin-top: 40px;
 }

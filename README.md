@@ -29,7 +29,7 @@ If you wish to build from source, use the following code:
 	$ git clone https://github.com/Spikatrix/Traly
 	$ cd Traly
 	$ yarn install   # Installs all dependencies
-	$ yarn run dev   # Serves the Vue.js app in localhost
+	$ yarn dev       # Serves the Vue.js app
 
 ## Contributing
 

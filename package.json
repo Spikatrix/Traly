@@ -1,5 +1,5 @@
 {
-  "name": "Traly",
+  "name": "traly",
   "version": "0.0.1",
   "description": "Add translations to LRC files",
   "author": "Spikatrix",
@@ -22,7 +22,7 @@
     "vue": "^3.0.0-rc.1"
   },
   "devDependencies": {
-    "vite": "^1.0.0-rc.1",
-    "@vue/compiler-sfc": "^3.0.0-rc.1"
+    "@vue/compiler-sfc": "^3.0.0-rc.1",
+    "vite": "^1.0.0-rc.1"
   }
 }

@@ -12,7 +12,7 @@
 
       <select v-if="isSelectBox" v-model="dataStore.selectedLang">
         <option disabled value="">{{ step.placeholderText }}</option>
-        <option v-for="(name, value) in dataStore.languages" :value="value">{{ name }} ({{ value }})</option>
+        <option v-for="(name, value) in dataStore.languages" :key="value" :value="value">{{ name }} ({{ value }})</option>
       </select>
 
       <textarea v-if="isTextBox" :placeholder="step.placeholderText" v-model="dataStore.translatedLyrics"></textarea>
@@ -55,10 +55,10 @@ export default {
     }
   },
   methods: {
-    clickUploadButton($event) {
+    clickUploadButton() {
       this.$refs.fileUploadButton.click();
     },
-    updateSelectedFile($event) {
+    updateSelectedFile(event) {
       if (event.target.files[0] == undefined) { // File selection dialog was closed
         return;
       }
@@ -66,12 +66,12 @@ export default {
       this.step.placeholderText = event.target.files[0].name;
       this.dataStore.file = event.target.files[0];
     },
-    translateLyrics($event) {
+    translateLyrics() {
       this.$emit('translateLyrics');
     }
   },
   watch: {
-    'dataStore.link': function(newLink) {
+    'dataStore.link'() {
       if (this.$refs.linkTitle != undefined) {
         this.$refs.linkTitle.target = '_blank';
       }

@@ -78,7 +78,7 @@ export default {
 			}
 
 			const finalContents = LyricManager.generateTranslatedContents(this.fileContents, this.dataStore.translatedLyrics);
-			const fileName = this.dataStore.file.name.replace(/\.[^/.]+$/, "") + "_" + this.dataStore.selectedLang + ".lrc";
+			const fileName = this.dataStore.file.name.replace(/\.[^/.]+$/, "") + "." + this.dataStore.selectedLang + ".lrc";
 			this.prepareDownload(fileName, finalContents);
 		},
 		prepareDownload(fileName, fileContents) {

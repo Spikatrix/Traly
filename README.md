@@ -1,6 +1,6 @@
 # Traly &nbsp; [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-<img src="https://i.stack.imgur.com/EMwIg.png" alt="Traly Icon" width="150px" align="left" style="margin: 10px 20px 10px 10px; border-radius: 15%; box-shadow: 0 6px 20px 2px black">
+<img src="https://github.com/Spikatrix/Traly/assets/12792882/d15dbe69-add0-472b-a23f-54c8c0324ee8" alt="Traly Icon" width="150px" align="left" style="margin: 10px 20px 10px 10px; border-radius: 15%; box-shadow: 0 6px 20px 2px black">
 
 <br/>
 <br/>
@@ -24,12 +24,12 @@ Traly is a tool that helps you to add translations to LRC files. This is done by
 
 ## Build from source
 
-If you wish to build from source, use the following code:
+If you wish to build from source, run the following:
 
-	$ git clone https://github.com/Spikatrix/Traly
-	$ cd Traly
-	$ yarn install   # Installs all dependencies
-	$ yarn dev       # Serves the Vue.js app
+	git clone https://github.com/Spikatrix/Traly
+	cd Traly
+	yarn install
+	yarn dev
 
 ## Contributing
 
